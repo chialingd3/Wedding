@@ -1,0 +1,92 @@
+.p- {
+  &bigBanner {
+    @include bg-cover("../../img/bg00.jpg");
+    &__mark {
+      padding: 18vw 0 14vw;
+      background: rgba($mostlyBlack, 0.6);
+      @include media-breakpoint-max(sm) {
+        padding: 8rem 0 6rem;
+      }
+      &__text {
+        &__title {
+          font-size: $font-3xl;
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          animation: typing 2s steps(20);
+          @include media-breakpoint-max(md) {
+            font-size: $font-xl;
+          }
+          @include media-breakpoint-max(sm) {
+            font-size: $font-l;
+          }
+        }
+        &__button {
+          animation: translateY 1.5s ease-in-out 2s 2;
+          letter-spacing: 1px;
+          &:hover {
+            transform: translateY(0.5rem);
+          }
+        }
+      }
+    }
+  }
+  &story {
+    &__text {
+      width: 90%;
+      @include media-breakpoint-max(md) {
+        width: 100%;
+      }
+    }
+    &__img {
+      margin-top: -7rem;
+      box-shadow: 0 0 2px $white;
+      @include media-breakpoint-max(lg) {
+        margin-top: 2rem;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &advantage {
+    &__subtitle {
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: $font-xs;
+    }
+    &__title {
+      font-size: $font-xl;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+  }
+
+  &feedBack {
+    @include bg-cover("../../img/bg3.jpg");
+    background-attachment: fixed;
+    perspective: 2000px;
+    &__info {
+      &__title {
+        font-size: $font-l;
+        font-weight: 500;
+      }
+      &__name {
+        font-weight: 500;
+        letter-spacing: 1px;
+        font-size: $font-s;
+      }
+    }
+  }
+
+  &achievement {
+    &__number {
+      font-size: $font-2xl;
+      letter-spacing: 2px;
+      line-height: 2;
+    }
+    &__event {
+      letter-spacing: 1px;
+      font-size: $font-s;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.m-banner {
+  @include bg-cover("../../img/bg01.jpg");
+  height: 35vh;
+  @include media-breakpoint-max(sm) {
+    height: 25vh;
+  }
+  &__mark {
+    background: rgba($mostlyBlack, 0.6);
+    height: 100%;
+  }
+}
+
+.m-breadcrumb {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    letter-spacing: 3px;
+    font-size: 1rem;
+    &:before {
+      display: inline-block;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      color: #6c757d;
+      content: "/";
+    }
+    &--active {
+      color: $lightGray;
+    }
+  }
+  > li:first-child {
+    &:before {
+      display: none;
+    }
+  }
+}

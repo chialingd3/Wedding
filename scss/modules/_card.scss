@@ -1,0 +1,14 @@
+.m-card {
+  transition: all 0.3s;
+  &:hover,
+  &--active {
+    background: $softOrange !important;
+    .m-card__title {
+      color: $white !important;
+    }
+  }
+  &__title {
+    font-size: $font-m;
+    line-height: 1.5;
+  }
+}

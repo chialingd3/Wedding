@@ -1,0 +1,16 @@
+.m-choose {
+  @include bg-cover("../../img/bg2.jpg");
+  background-attachment: fixed;
+  &__title {
+    font-size: $font-l;
+    letter-spacing: 2px;
+    line-height: 1.5;
+  }
+  &__list {
+    &__title {
+      letter-spacing: 2px;
+      font-size: $font-s;
+      font-weight: 600;
+    }
+  }
+}

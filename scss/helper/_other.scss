@@ -1,0 +1,17 @@
+.h- {
+  &title {
+    font-size: $font-2xl;
+    font-weight: 600;
+    text-align: center;
+    @include media-breakpoint-max(sm) {
+      font-size: $font-xl * 0.9;
+    }
+  }
+  &icon {
+    font-size: $font-xl;
+    color: $vividPink;
+  }
+  &overflow-hidden {
+    overflow: hidden !important;
+  }
+}

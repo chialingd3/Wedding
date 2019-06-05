@@ -1,0 +1,16 @@
+.m-toTop {
+  position: fixed;
+  right: 1%;
+  bottom: 2%;
+  &__button {
+    font-size: 14px;
+    padding: 5.75px 8px;
+    color: $white;
+    border-radius: 50%;
+    transition: all 0.5s;
+    background: rgba($lightGray, 0.6);
+    &:hover {
+      background: rgba($lightGray, 1);
+    }
+  }
+}

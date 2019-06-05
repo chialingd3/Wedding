@@ -1,0 +1,19 @@
+.p-contact {
+  animation: fadeIn-bottom 2s;
+  &__map {
+    padding: 0;
+    min-height: 250px;
+  }
+  &__data {
+    padding: 0;
+    &__title {
+      font-size: $font-m;
+      text-shadow: 0 1px 2px rgba($mostlyBlack, 0.15);
+    }
+    &__button {
+      letter-spacing: 2px;
+      font-weight: 600;
+      outline: 0;
+    }
+  }
+}

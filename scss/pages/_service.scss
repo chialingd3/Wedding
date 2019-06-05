@@ -1,0 +1,17 @@
+.p-services {
+  &__choose {
+    &__title {
+      font-size: $font-l;
+      font-weight: 600;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate3d(0, 1, 1, 0deg);
+  }
+  to {
+    transform: rotate3d(0, 1, 1, 360deg);
+  }
+}

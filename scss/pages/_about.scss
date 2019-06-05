@@ -1,0 +1,49 @@
+.p- {
+  &aboutUs {
+		animation: fadeIn-bottom 1s;
+    &__img {
+      box-shadow: 0 0 5px $lighterGray;
+    }
+    &__smalltitle {
+      font-size: $font-l;
+      letter-spacing: 1px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+	}
+	&planners {
+		&__info {
+			position: relative;
+			overflow: hidden;
+			&__detail {
+				border-top: 5px solid $vividPink;
+				position: absolute;
+				width: calc(100% - 30px);
+				left: 15px;
+				bottom: 0;
+				transform: translateY(100%);
+				transition: all 0.3s;
+				@include media-breakpoint-max(sm) {
+					border-top: 3px solid $vividPink;
+				}
+				&__name {
+					font-size: $font-s;
+					font-weight: 600;
+					letter-spacing: 1px;
+				}
+				&__icon {
+					color: $white;
+					transition: all 0.3s;
+					&:hover {
+						color: $moderateCyan;
+					}
+				}
+			}
+			&:hover {
+				.p-planners__info__detail {
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+}

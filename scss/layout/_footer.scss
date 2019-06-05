@@ -1,0 +1,35 @@
+.l-footer {
+  &__subscribe {
+    &__title {
+      font-size: $font-l*1.1;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+    }
+    &__submit {
+      width: 25%;
+      border: none;
+      margin-left: 1%;
+      font-weight: 500;
+      font-size: $font-base;
+      outline: 0;
+    }
+  }
+  &__copyright {
+    &__social {
+      display: block;
+      width: 36px;
+      height: 36px;
+      line-height: 32px;
+      text-align: center;
+      font-size: $font-xs;
+      border: 2px solid $white;
+      color: $white;
+      background: transparent;
+      border-radius: 50%;
+      transition: all 0.3s;
+      &:hover {
+        color: $moderateCyan;
+      }
+    }
+  }
+}

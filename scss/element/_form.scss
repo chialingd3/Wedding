@@ -1,0 +1,40 @@
+.e-form {
+  &-group {
+    margin-bottom: 1rem;
+    label {
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      line-height: 1.5;
+    }
+  }
+
+  &-control {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    -webkit-appearance: none;
+    line-height: 1.5;
+    color: $lightGray;
+    background-color: $white;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  &-textarea {
+    outline: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: $lightGray;
+    background: $white;
+    width: 100%;
+    letter-spacing: 1px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    min-height: 100px;
+  }
+}

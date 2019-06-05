@@ -1,0 +1,9 @@
+@each $name, $color in $theme-colors {
+  .h-bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+.h-bg-transparent {
+  background-color: transparent !important;
+}

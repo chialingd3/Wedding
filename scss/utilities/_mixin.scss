@@ -1,0 +1,169 @@
+@mixin hide-text {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin bg-cover($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin position-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin row-limit($row: 1) {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin link-hover {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+
+@mixin media-breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (max-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin make-row($gutter: $gutter-width) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -($gutter/2);
+  margin-right: -($gutter/2);
+}
+
+@mixin make-col($size, $cols: $grid-columns) {
+  flex: 0 0 percentage($size / $cols);
+  max-width: percentage($size / $cols);
+}
+
+@mixin make-grid-col($cols: $grid-columns, $gutter: $gutter-width, $breakpoints: $grid-breakpoints) {
+  %col {
+    position: relative;
+    width: 100%;
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @for $i from 1 through $cols {
+      .col#{$infix}-#{$i} {
+        @extend %col;
+      }
+    }
+    .col#{$infix},
+    .col#{$infix}-auto {
+      @extend %col;
+    }
+
+    @include media-breakpoint-min($breakpoint, $breakpoints) {
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .col#{$infix}-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+      }
+
+      @for $i from 1 through $cols {
+        .col#{$infix}-#{$i} {
+          @include make-col($i, $cols);
+        }
+      }
+    }
+  }
+}
+
+@mixin make-container($gutter: $gutter-width) {
+  width: 100%;
+  padding-right: $gutter/2;
+  padding-left: $gutter/2;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin make-container-max-width($max-width: $container-max-width, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-width in $max-width {
+    @include media-breakpoint-min($breakpoint, $breakpoints) {
+      max-width: $container-width;
+    }
+  }
+}
+
+@mixin generate-utility($utility, $infix) {
+  $values: map-get($utility, values);
+  @if type-of($values) == "string" or type-of(nth($values, 1)) != "list" {
+    $values: zip($values, $values);
+  }
+  @each $value in $values {
+    $properties: map-get($utility, property);
+    @if type-of($properties) == "string" {
+      $properties: append((), $properties);
+    }
+    $property-class: map-get($utility, class);
+    $property-class: if($property-class, $property-class, nth($properties, 1));
+    $property-class-modifier: if(nth($value, 1), "-" + nth($value, 1), "");
+
+    .#{$property-class + $infix + $property-class-modifier} {
+      @each $property in $properties {
+        #{$property}: #{nth($value, 2)} !important;
+      }
+    }
+  }
+}

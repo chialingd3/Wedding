@@ -1,0 +1,42 @@
+.e-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  color: $white;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+
+  &-xl {
+    padding: 1.2rem 3rem !important;
+  }
+  &-lg {
+    padding: 0.8rem 1.75rem !important;
+  }
+  &-sm {
+    padding: 0.5rem 1.25rem !important;
+  }
+  &-block {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+}
+
+@each $name, $color in $theme-colors {
+  .e-btn-#{$name} {
+    background-color: $color !important;
+    transition: all 0.3s !important;
+    &:hover {
+      background-color: darken($color, 10%) !important;
+    }
+    &:focus {
+      background-color: darken($color, 10%) !important;
+      box-shadow: 0 0 5px rgba($color, 0.7) !important;
+    }
+  }
+}

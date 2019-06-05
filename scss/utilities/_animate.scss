@@ -1,0 +1,136 @@
+.animate- {
+	&animation-rotate3D {
+		animation: rotate3D ease-in-out 1s;
+	}
+	&animation-fadeIn-bottom {
+		animation: fadeIn-bottom 1s;
+	}
+  &left {
+    transition: all 1s;
+    opacity: 0;
+    transform: translate(-20%, 0);
+  }
+  &right {
+    transition: all 1s;
+    opacity: 0;
+    transform: translate(20%, 0);
+  }
+  &top {
+    transition: all 1s;
+    opacity: 0;
+    transform: translate(0, -20%);
+  }
+  &bottom {
+    transition: all 1s;
+    opacity: 0;
+    transform: translate(0, 20%);
+  }
+  &rotate3D {
+    transition: all 1s;
+    opacity: 0;
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  &rotate360-1 {
+    transition: all 0.8s;
+    transform: scale(0) rotate(0deg);
+  }
+  &rotate360-2 {
+    transition: all 1s;
+    transform: scale(0) rotate(0deg);
+  }
+  &rotate360-3 {
+    transition: all 1.2s;
+    transform: scale(0) rotate(0deg);
+  }
+  &rotate360-4 {
+    transition: all 1.4s;
+    transform: scale(0) rotate(0deg);
+  }
+  &translate3D {
+    transition: all 1s;
+    transform: perspective(500px) translate3d(-300px, 300px, -1000px);
+	}
+	&scale3D {
+    transition: all 1s;
+    transform: rotateZ(0deg) scale3d(0, 0, 0);
+  }
+  &specaile3D {
+    transition: all 1.5s;
+    transform-style: preserve-3d;
+    transform: rotateY(60deg);
+  }
+}
+
+.fadeIn- {
+  &translate {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  &rotate3D {
+    opacity: 1;
+    transform: rotate3d(1, 0.8, 1, 360deg);
+  }
+  &rotate360 {
+    transform: scale(1) rotate(360deg);
+  }
+  &translate3D {
+    transform: perspective(0) translate3d(0, 0, 0);
+	}
+	&scale3D {
+    transform: rotateZ(360deg) scale3d(1, 1, 1);
+  }
+  &specaile3D {
+    transform: rotateY(360deg);
+	}
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes fadeIn-bottom {
+  from {
+    opacity: 0;
+    transform: translate(0, 20%);
+	}
+	to{
+		opacity: 1;
+    transform: translate(0, 0);
+	}
+}
+
+@keyframes rotate3D {
+  from {
+    opacity: 0;
+    transform: rotate3d(0, 0, 0, 0deg);
+	}
+	to{
+		opacity: 1;
+    transform: rotate3d(1, 0.8, 1, 360deg);
+	}
+}
+
+@keyframes scale3D {
+  from {
+    transform: rotateY(0deg) scale3d(0, 0, 0)
+	}
+	to{
+    transform: rotateY(360deg) scale3d(1, 1, 1)
+	}
+}
+
+
+@keyframes translateY {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+

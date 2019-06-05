@@ -1,0 +1,90 @@
+// color
+$vividPink: #f70255 !default;
+$white: #ffffff !default;
+$lightWhite: #edeeef !default;
+$mostlyBlack: #101010 !default;
+$darkGray: #212121 !default;
+$lightGray: #777777 !default;
+$lighterGray: #cccccc !default;
+$softOrange: #e8b15b !default;
+$moderateCyan: #36b1af !default;
+
+$themes: () !default;
+
+$theme-colors: map-merge(
+  (
+    "light": $lightWhite,
+    "primary": $vividPink,
+    "secondary": $darkGray,
+    "dark": $mostlyBlack,
+    "white": $white,
+    "info": $moderateCyan,
+    "warning": $softOrange,
+    "steady": $lightGray,
+    "soft": $lighterGray
+  ),
+  $themes
+);
+
+// grid
+$gutter-width: 30px !default;
+$grid-columns: 12 !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 568px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$container-max-width: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+$spacer: 1rem !default;
+$spacers: () !default;
+
+$spacers: map-merge(
+  (
+    0: 0,
+    1: (
+      $spacer * 0.25
+    ),
+    2: (
+      $spacer * 0.5
+    ),
+    3: $spacer,
+    4: (
+      $spacer * 1.5
+    ),
+    5: (
+      $spacer * 2.5
+    ),
+    6: (
+      $spacer * 3
+    ),
+    7: (
+      $spacer * 5
+    ),
+    8: (
+      $spacer * 7
+    )
+  ),
+  $spacers
+);
+
+// font
+$font-base: 1rem;
+$font-xs: $font-base * 0.94;
+$font-s: $font-base * 1.13;
+$font-m: $font-base * 1.25;
+$font-l: $font-base * 1.5;
+$font-xl: $font-base * 2;
+$font-2xl: $font-base * 2.5;
+$font-3xl: $font-base * 3;
+
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex !default;

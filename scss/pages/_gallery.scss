@@ -1,0 +1,11 @@
+.p-gallery {
+  &__title {
+    animation: fadeIn-bottom 1s;
+  }
+  &__img {
+    transition: all 0.3s;
+    &:hover {
+      box-shadow: 0 0 10px $lightGray;
+    }
+  }
+}
