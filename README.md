@@ -1,5 +1,5 @@
 # Wedding
-![index](https://user-images.githubusercontent.com/47848363/58959741-4ada0a80-87d8-11e9-8910-51aeecff3680.png)
+![index](https://user-images.githubusercontent.com/47848363/59336625-7e191e00-8d31-11e9-81dd-adda2f404cd1.png)
 
 ## Demo 
 https://misty1636.github.io/Wedding/
