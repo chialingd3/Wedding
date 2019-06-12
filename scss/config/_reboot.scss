@@ -3,12 +3,15 @@
 
 html {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
 }
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system,"微軟正黑體", "Microsoft JhengHei", "Roboto", sans-serif;
 }
 
 img {
@@ -28,18 +31,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Josefin Sans", sans-serif;
   line-height: 1.2;
 }
 
 h1 {
   font-weight: 700;
   font-size: $font-xl;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 h2,
 h3 {
   letter-spacing: 2px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 p {

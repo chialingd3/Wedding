@@ -1,6 +1,8 @@
 .p- {
   &bigBanner {
     @include bg-cover("../../img/bg00.jpg");
+    position: relative;
+    overflow: hidden;
     &__mark {
       padding: 18vw 0 14vw;
       background: rgba($mostlyBlack, 0.6);
